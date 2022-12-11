@@ -1,20 +1,38 @@
+[tool.black]
+line-length = "110"
+target-version = ['py39']
+include = '\.pyi?$'
+extend-exclude = '''
+(
+  /(
+      \.eggs
+    | \.git
+    | \.venv
+    | venv
+    | venv2
+    | _build
+    | build
+    | dist
+    | plugins
+    | temp
+  )/
+)
+'''
+
 [tool.poetry]
-name = "python-template"
-version = "0.1.0"
-description = ""
-authors = ["Your Name <you@example.com>"]
+name = 'Modmail'
+version = '3.10.3'
+description = "Modmail is similar to Reddit's Modmail, both in functionality and purpose. It serves as a shared inbox for server staff to communicate with their users in a seamless way."
+license = 'AGPL-3.0-only'
+authors = [
+    'kyb3r <noemail@example.com>',
+    '4jr <noemail@example.com>',
+    'Taki <noemail@example.com>'
+]
+readme = 'README.md'
+repository = 'https://github.com/kyb3r/modmail'
+homepage = 'https://github.com/kyb3r/modmail'
+keywords = ['discord', 'modmail']
 
-[tool.poetry.dependencies]
-python = ">=3.8.0,<3.9"
-numpy = "^1.22.2"
-replit = "^3.2.4"
-Flask = "^2.2.0"
-urllib3 = "^1.26.12"
-
-[tool.poetry.dev-dependencies]
-debugpy = "^1.6.2"
-replit-python-lsp-server = {extras = ["yapf", "rope", "pyflakes"], version = "^1.5.9"}
-
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.pylint.format]
+max-line-length = "110"
